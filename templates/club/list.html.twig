@@ -1,0 +1,31 @@
+<html>
+  <head></head>
+  <body>
+     <h1>La liste des formations</h1>
+     <table border="2">
+        <tr>
+            <th>ref</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date debut</th>
+            <th>Date de fin</th>
+            <th>nbr de participant</th>
+        </tr>
+         <tr {% for formation in liste %}>                
+             <td>{{ formation.ref }}</td>
+             <td>{{ formation.Titre|upper }}</td>
+             <td>{{ formation.Description }}</td>
+             <td>{{ formation.date_debut }}</td>
+             <td>{{ formation.date_fin }}</td>
+             <td>{{ formation.nb_participants }}</td>
+             {% if formation.nb_participants == 0 %}
+
+             <td><form action="{{path('show',{'titre':formation.Titre }) }}"><button>participer</button></form></td>
+             {% endif %}
+         </tr  {% endfor %}>
+</table>
+<h2> nombre de formations {{liste|length}} </h2>
+
+</body>
+</html>
+     

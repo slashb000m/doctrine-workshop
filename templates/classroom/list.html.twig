@@ -1,0 +1,17 @@
+<html>
+  <head></head>
+  <body>
+     <h1>La liste des classes</h1>
+     <table border="2">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+         <tr {% for classe in liste %}>                
+             <td>{{ classe.id }}</td>
+             <td>{{ classe.name}}</td>
+             <td><a href="{{path('deleteById',{'id':classe.id }) }}"> supprimer !  </a></td>
+         </tr  {% endfor %}>
+</table>
+</body>
+</html>
