@@ -1,0 +1,11 @@
+{#  {{ form(formA) }}#}
+{# à remplacer par #}
+
+{{ form_start(formA) }}{# <form> #}
+   {{ form_label(formA.name,'Nom du la classe') }} {# <label>Nom du la classe</label> #}
+   {{ form_widget(formA.name) }} {# <input type="text"> #}
+   {{ form_help(formA.name) }}
+
+
+
+{{ form_end(formA) }}{# </form> #}
